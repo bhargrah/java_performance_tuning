@@ -1,4 +1,4 @@
-test Plans -
+Jmeter Test Plans -
 
 1) First one energymart_plan_recommend_view_result.jmx needs to be run using jmeter only to check if everything is working as expected.
 2) Second one energymart_plan_recommend_command_line.jmx needs to be run from command line.
