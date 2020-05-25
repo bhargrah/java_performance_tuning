@@ -68,7 +68,7 @@ This repo will have all the tools and guide that are useful for debugging any ja
   XX:StartingFlightRecording=settings=default|profile,maxsize=60M,maxage=1d
 ```  
 
-- JDK 11
+- JDK 11 (few flags depricated)
 ``` java 
   XX:+UnlockDiagnosticVMOptions -
   XX:+DebugNonSafepoints -
@@ -77,13 +77,14 @@ This repo will have all the tools and guide that are useful for debugging any ja
 
 - Flight Recording Settings 
 ``` java
-  XX:StartingFlightRecording=settings=default|profile,
-                                      maxsize=60M,
-                                      maxage=1d,
-                                      delay=30s,        // will delay the recording after 30 sec , warmup etc 
-                                      duration=10m,     // will record the application for 10 min 
-                                      name=MyRecording, // name of the recording 
-                                      filename=/tmp/myrecording.jfr // path for recording
+  XX:StartingFlightRecording=
+                    settings=default|profile,
+                             maxsize=60M,
+                             maxage=1d,
+                             delay=30s,        // will delay the recording after 30 sec , warmup etc 
+                             duration=10m,     // will record the application for 10 min 
+                             name=MyRecording, // name of the recording 
+                             filename=/tmp/myrecording.jfr // path for recording
                                       
 ``` 
 
