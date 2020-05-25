@@ -2,11 +2,16 @@
 
 This repo will have all the tools and guide that are useful for debugging any java process. Aim  is to document all the commands and create a single repository which can be used as reference guide for memory analysis.
 
-### Tools - 
+- [Tools](#tools)
+- [Basic Commands](#basic-commands)
+- [Profiler](#profiler)
+- [JVM Flags](#JVM-Flags)
+
+## Tools - 
 * JMeter
 * Installation Link - https://visualvm.github.io/download.html
 
-### Commands - 
+## Basic Commands - 
 | Sr. No|Commands|Use|
 | ------------- | ------------- | ------------- |
 | 1 | jps | list down java process |
@@ -16,7 +21,8 @@ This repo will have all the tools and guide that are useful for debugging any ja
 | 5 | jcmd | profiling tool (command line , combination of 2,3,4) |
 | 6 | jmc| missing control , GUI app |
 
-### Profiler Types
+## Profiler 
+### Types
 - CPU : Concerned witht eh frequenscy and lenght of time of method execution  
     * Sampling(least overhead) & Instrumentation ()bytecode manipulation) ,  Hot method detection , optimize it 
 - Memory : Monitor classes , GC etc
@@ -25,7 +31,7 @@ This repo will have all the tools and guide that are useful for debugging any ja
 
  use multiple profiler 
  
-#### Names 
+### Names 
 | Sr. No|Profilers Name|Link|
 | ------------- | ------------- | ------------- |
 |1|Java VisualVM|Free , bundeld with SDK|
@@ -35,7 +41,7 @@ This repo will have all the tools and guide that are useful for debugging any ja
 |5|JProfiler|licenced|
 
 
-To enable Flight Recorder (JVM Settings)
+## JVM Flags
 * `java -X:+UnlockCommercialFeatures -XX:+FlightRecorder` -- work in  java < 11
 
  `-XX:+UnlockCommercialFeatures`  -- not to be used in java 11
