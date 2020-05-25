@@ -41,10 +41,28 @@ public class PricePlan {
     }
 
     public BigDecimal getPrice(BigDecimal reading, Instant instant) {
+        //return getPriceNoMemoryLeak(reading,instant);
+        return getPriceMemoryLeak(reading,instant);
+
+    }
+
+    // No memory implementation
+    public BigDecimal getPriceNoMemoryLeak(BigDecimal reading, Instant instant) {
         ZonedDateTime dateTime = instant.atZone(UTC_ZONE_ID);
         int weekHour = WeekHour.fromDateTime(dateTime);
         Optional<OffPeakTimeMultiplier> offPeakTimeMultiplier = offPeakTimeMultipliers.stream()
                 .filter(multiplier -> multiplier.getHourOfWeek() == weekHour)
+                .findFirst();
+
+        BigDecimal adjustedRate = offPeakTimeMultiplier.map(multiplier -> unitRate.multiply(multiplier.getMultiplier())).orElse(unitRate);
+        return reading.multiply(adjustedRate);
+    }
+
+    // Memory leak implementation
+    public BigDecimal getPriceMemoryLeak(BigDecimal reading, Instant instant) {
+        ZonedDateTime dateTime = instant.atZone(ZoneId.of("UTC")); // memory leak
+        Optional<OffPeakTimeMultiplier> offPeakTimeMultiplier = offPeakTimeMultipliers.stream()
+                .filter(multiplier -> multiplier.getHourOfWeek() == WeekHour.fromDateTime(dateTime))
                 .findFirst();
 
         BigDecimal adjustedRate = offPeakTimeMultiplier.map(multiplier -> unitRate.multiply(multiplier.getMultiplier())).orElse(unitRate);
