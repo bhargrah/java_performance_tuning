@@ -6,7 +6,7 @@ This repo will have all the tools and guide that are useful for debugging any ja
 - [Basic Commands](#basic-commands)
 - [Profiler Types](#profiler-types)
 - [Profiler Names](#profiler-names)
-- [Java Mission Control](#javamission)
+- [Java Mission Control](#java-mission-control)
 
 ## Tools - 
 * JMeter
