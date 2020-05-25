@@ -68,7 +68,7 @@ To enable Flight Recorder (JVM Settings)
 ```  
 
 - Flight Recording Settings 
-``` 
+``` java
   XX:StartingFlightRecording=settings=default|profile,
                                       maxsize=60M,
                                       maxage=1d,
