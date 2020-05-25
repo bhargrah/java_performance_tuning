@@ -57,14 +57,14 @@ To enable Flight Recorder (JVM Settings)
   XX:+DebugNonSafepoints -
   XX:+UnlockCommercialFeatures -
   XX:+FlightRecorder - 
-  XX:StartingFlightRecording=settings=default|profile
+  XX:StartingFlightRecording=settings=default|profile,maxsize=60M,maxage=1d
 ```  
 
 - JDK 11
 ``` java 
   XX:+UnlockDiagnosticVMOptions -
   XX:+DebugNonSafepoints -
-  XX:StartingFlightRecording=settings=default|profile
+  XX:StartingFlightRecording=settings=default|profile,maxsize=60M,maxage=1d
 ```  
 
 
