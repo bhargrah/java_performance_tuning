@@ -2,16 +2,15 @@
 
 This repo will have all the tools and guide that are useful for debugging any java process. Aim  is to document all the commands and create a single repository which can be used as reference guide for memory analysis.
 
-- [Tools](#tools)
+- [Performace Testing Tools](#performace-testing-tools)
 - [Basic Commands](#basic-commands)
 - [Profiler Types](#profiler-types)
 - [Profiler Names](#profiler-names)
 - [Java Mission Control](#java-mission-control)
 - [JVM Tuning](#jvm-tuning)
 
-## Tools - 
-* JMeter
-* Installation Link - https://visualvm.github.io/download.html
+## Performace Testing Tools - 
+* JMeter (Installation Link - https://visualvm.github.io/download.html)
 
 ## Basic Commands - 
 | Sr. No|Commands|Use|
