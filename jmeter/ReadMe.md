@@ -10,6 +10,7 @@
 
 alias jmeter='/Users/rahulbhargava/Library/jmeter/bin/jmeter.sh'
 
+cd {to jmeter folder in project}
 jmeter -n -t energymart_plan_recommend_command_line.jmx -l energymart.jtl -Jthreads=100 -Jduration=120
 jmeter -g energymart.jtl -o html-report
 ```
