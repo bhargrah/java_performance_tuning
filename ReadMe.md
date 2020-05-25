@@ -45,11 +45,12 @@ This repo will have all the tools and guide that are useful for debugging any ja
 
 
 ## Java Mission Control
-
+### Mode Types
  -  Continuous mode 
  -  Interval mode 
- 
- * Default Configuration (low over head)
+
+### Configuration Types
+ * Default Configuration (low over head , sample command below)
  * Profile Configuration (high over head)
  * Custom Configuration (user defined , mixed mode)
  
