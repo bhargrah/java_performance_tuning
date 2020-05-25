@@ -17,10 +17,11 @@ This repo will have all the tools and guide that are useful for debugging any ja
 * Installation Link - https://visualvm.github.io/download.html
 
 ### Profiler Types
-CPU 
-Memory
-Thread
-I/O
+- CPU : Concerned witht eh frequenscy and lenght of time of method execution  
+    * Sampling(least overhead) & Instrumentation ,  Hot method detection , optimize it 
+- Memory
+- Thread
+- I/O
 #### Types
 To be updated 
 
