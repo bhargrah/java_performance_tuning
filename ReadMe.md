@@ -57,8 +57,16 @@ To enable Flight Recorder (JVM Settings)
   XX:+DebugNonSafepoints -
   XX:+UnlockCommercialFeatures -
   XX:+FlightRecorder - 
-  XX:StartingFlightRecording=settings=default
+  XX:StartingFlightRecording=settings=default|profile
 ```  
+
+- JDK 11
+``` java 
+  XX:+UnlockDiagnosticVMOptions -
+  XX:+DebugNonSafepoints -
+  XX:StartingFlightRecording=settings=default|profile
+```  
+
 
  | JDK 8  | JDK11 | Remarks|
 | ------------- | ------------- | ------------- |
