@@ -67,6 +67,17 @@ To enable Flight Recorder (JVM Settings)
   XX:StartingFlightRecording=settings=default|profile,maxsize=60M,maxage=1d
 ```  
 
+- Flight Recording Settings 
+``` 
+  XX:StartingFlightRecording=settings=default|profile,
+                                      maxsize=60M,
+                                      maxage=1d,
+                                      delay=30s,        // will delay the recording after 30 sec , warmup etc 
+                                      duration=10m,     // will record the application for 10 min 
+                                      name=MyRecording, // name of the recording 
+                                      filename=/tmp/myrecording.jfr // path for recording
+                                      
+``` 
 
  | JDK 8  | JDK11 | Remarks|
 | ------------- | ------------- | ------------- |
