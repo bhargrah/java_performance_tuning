@@ -51,5 +51,17 @@ To enable Flight Recorder (JVM Settings)
  Profile Configuration (high over head)
  Custom Configuration (user defined , mixed mode)
  
- 
+- JDK 8
+`XX:+UnlockDiagnosticVMOptions -
+  XX:+DebugNonSafepoints -
+  XX:+UnlockCommercialFeatures -
+  XX:+FlightRecorder - 
+  XX:StartingFlightRecording=settings=default` 
+
+ | JDK 8  | JDK11 | Remarks|
+| ------------- | ------------- | ------------- |
+| XX:+UnlockCommercialFeatures | http://localhost:9351/  | Y |
+| Treasury Service  | http://localhost:9352/  | Y |
+
+
  
