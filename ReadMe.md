@@ -37,9 +37,12 @@ To be updated
 
 
 To enable Flight Recorder (JVM Settings)
-java -X:+UnlockCommercialFeatures -XX:+FlightRecorder -- work in  java < 11
+* `java -X:+UnlockCommercialFeatures -XX:+FlightRecorder` -- work in  java < 11
 
- -X:+UnlockCommercialFeatures  -- not to be used in java 11
+ `-XX:+UnlockCommercialFeatures`  -- not to be used in java 11
+ 
+ - Java11 - 
+ `-XX:+UnlockDiagnosticVMOptions --XX:+DebugNonSafepoints`
  
  continuous mode 
  regular interval mode 
