@@ -7,6 +7,7 @@ This repo will have all the tools and guide that are useful for debugging any ja
 - [Profiler Types](#profiler-types)
 - [Profiler Names](#profiler-names)
 - [Java Mission Control](#java-mission-control)
+- [JVM Tuning](#jvm-tuning)
 
 ## Tools - 
 * JMeter
