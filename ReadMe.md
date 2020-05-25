@@ -12,9 +12,13 @@ This repo will have all the tools and guide that are useful for debugging any ja
 5) jcmd -- profiling tool (command line , combination of 2,3,4) 
 6) jmc -- (missing control , GUI app)
 
- | Sr. No  | Commands | Use |
-| ------------- | ------------- | ------------- |
-| 1 | jps  | list down java process |
+| Sr. No  | Commands | Use |
+| 1 | `jps`  | list down java process |
+| 2 | `jinfo`  | ist down all info of process |
+| 3 | `jstat`  | status of memory allocation (jstat -gcutil 44525) |
+| 4 | `jmap`  | used for memory dump |
+| 5 | `jcmd`  | profiling tool (command line , combination of 2,3,4) |
+| 6 | `jmc`  | missing control , GUI app |
 
 
 ### Tools - 
