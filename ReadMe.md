@@ -23,11 +23,14 @@ This repo will have all the tools and guide that are useful for debugging any ja
 | 6 | jmc| missing control , GUI app |
 
 ## Profiler Types
-- CPU : Concerned witht eh frequenscy and lenght of time of method execution  
+### CPU Profiler: 
+- Concerned with the frequenscy and lenght of time of method execution  
     * Sampling(least overhead) & Instrumentation ()bytecode manipulation) ,  Hot method detection , optimize it 
-- Memory : Monitor classes , GC etc
-- Thread : Concerned with understanding what states threads are in and why (stop , blocked state check etc, deadlock etc)
-- I/O : 
+### Memory Profiler: 
+- Monitor classes , GC etc
+### Thread Profiler: 
+- Concerned with understanding what states threads are in and why (stop , blocked state check etc, deadlock etc)
+### I/O Profiler: 
 
  use multiple profiler 
  
