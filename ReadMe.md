@@ -6,7 +6,7 @@ This repo will have all the tools and guide that are useful for debugging any ja
 - [Basic Commands](#basic-commands)
 - [Profiler Types](#profiler-types)
 - [Profiler Names](#profiler-names)
-- [JVM Flags](#JVM-Flags)
+- [Java Mission Control](#javamission)
 
 ## Tools - 
 * JMeter
@@ -44,20 +44,14 @@ This repo will have all the tools and guide that are useful for debugging any ja
 |5|JProfiler|licenced|
 
 
-## JVM Flags
-* `java -X:+UnlockCommercialFeatures -XX:+FlightRecorder` -- work in  java < 11
+## Java Mission Control
 
- `-XX:+UnlockCommercialFeatures`  -- not to be used in java 11
+ -  Continuous mode 
+ -  Interval mode 
  
- - Java11 - 
- `-XX:+UnlockDiagnosticVMOptions --XX:+DebugNonSafepoints`
- 
- continuous mode 
- regular interval mode 
- 
- Default Configuration (low over head)
- Profile Configuration (high over head)
- Custom Configuration (user defined , mixed mode)
+ * Default Configuration (low over head)
+ * Profile Configuration (high over head)
+ * Custom Configuration (user defined , mixed mode)
  
 - JDK 8 ~ 10
 ``` java 
