@@ -16,7 +16,11 @@ This repo will have all the tools and guide that are useful for debugging any ja
 * JMeter
 * Installation Link - https://visualvm.github.io/download.html
 
-### Profiler
+### Profiler Types
+CPU 
+Memory
+Thread
+I/O
 #### Types
 To be updated 
 
