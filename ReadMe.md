@@ -5,7 +5,7 @@ This repo will have all the tools and guide that are useful for debugging any ja
 - [Performace Testing Tools](#performace-testing-tools)
 - [Basic Commands](#basic-commands)
 - [Profiler Types](#profiler-types)
-- [Profiler Names](#profiler-names)
+- [Profiler Tools Names](#profiler-tools-names)
 - [Java Mission Control](#java-mission-control)
 - [JVM Tuning](#jvm-tuning)
 
@@ -34,7 +34,7 @@ This repo will have all the tools and guide that are useful for debugging any ja
 
  use multiple profiler 
  
-## Profiler Names 
+## Profiler Tools Names 
 | Sr. No|Profilers Name|Link|
 | ------------- | ------------- | ------------- |
 |1|Java VisualVM|Free , bundeld with SDK|
