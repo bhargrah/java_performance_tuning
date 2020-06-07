@@ -12,6 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import static springfox.documentation.builders.PathSelectors.regex;
 
 // invoke -- http://localhost:8080/swagger-ui.html#/
+// refer -- https://dzone.com/articles/spring-boot-restful-api-documentation-with-swagger
 
 @Configuration
 @EnableSwagger2
