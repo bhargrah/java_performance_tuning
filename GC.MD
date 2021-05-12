@@ -7,10 +7,10 @@
 - Gener
 
 ## Memory Model 
-Non G1 GC
+### Non G1 GC
 ![image](https://user-images.githubusercontent.com/15336266/117921759-ea7e6c80-b30e-11eb-9607-89215ab16011.png)
 
-G1 GC
+### G1 GC
 ![image](https://user-images.githubusercontent.com/15336266/117923566-dd16b180-b311-11eb-925e-3059e8160ee0.png)
 
 
