@@ -7,7 +7,7 @@ This repo will have all the tools and guide that are useful for debugging any ja
 - [Profiler Types](#profiler-types)
 - [Profiler Tools Names](#profiler-tools-names)
 - [Java Mission Control](#java-mission-control)
-- [JVM Tuning](#jvm-tuning)
+- [JVM Visual VM](#jvm-visual-vm)
 
 ## Performace Testing Tools - 
 * JMeter (Installation Link - https://visualvm.github.io/download.html)
@@ -83,4 +83,4 @@ This repo will have all the tools and guide that are useful for debugging any ja
                                       
 ``` 
 
-## JVM Tuning
+## JVM Visual VM
