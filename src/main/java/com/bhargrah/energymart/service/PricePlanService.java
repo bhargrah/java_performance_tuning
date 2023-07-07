@@ -3,14 +3,13 @@ package com.bhargrah.energymart.service;
 import com.bhargrah.energymart.datasource.PricePlans;
 import com.bhargrah.energymart.model.ElectricityReading;
 import com.bhargrah.energymart.model.PricePlan;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.Duration;
 import java.util.*;
 import java.util.stream.Collectors;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 @Component
 public class PricePlanService {

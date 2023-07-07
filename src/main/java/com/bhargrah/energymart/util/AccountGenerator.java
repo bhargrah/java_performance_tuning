@@ -3,7 +3,6 @@ package com.bhargrah.energymart.util;
 import com.bhargrah.energymart.datasource.PricePlans;
 import com.bhargrah.energymart.model.PricePlan;
 import com.bhargrah.energymart.model.UserAccount;
-
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.HashMap;
@@ -12,7 +11,6 @@ import java.util.Map;
 import java.util.Random;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
-
 
 public class AccountGenerator {
 

@@ -1,16 +1,11 @@
 package com.bhargrah.energymart.datasource;
 
 import com.bhargrah.energymart.model.ElectricityReading;
-import com.bhargrah.energymart.model.UserAccount;
 import com.bhargrah.energymart.util.ElectricityReadingsGenerator;
+import java.util.*;
+import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
-import java.math.BigDecimal;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-import java.util.*;
 
 @Component
 public class ElectricityReadings {

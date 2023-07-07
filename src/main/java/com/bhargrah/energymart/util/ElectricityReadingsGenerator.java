@@ -3,7 +3,6 @@ package com.bhargrah.energymart.util;
 import com.bhargrah.energymart.datasource.Accounts;
 import com.bhargrah.energymart.model.ElectricityReading;
 import com.bhargrah.energymart.model.UserAccount;
-
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;

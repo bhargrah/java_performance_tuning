@@ -1,7 +1,6 @@
 package com.bhargrah.energymart.model;
 
 import com.bhargrah.energymart.util.WeekHour;
-
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.ZoneId;

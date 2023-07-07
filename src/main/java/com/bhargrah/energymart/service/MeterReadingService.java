@@ -4,11 +4,10 @@ import com.bhargrah.energymart.datasource.Accounts;
 import com.bhargrah.energymart.datasource.ElectricityReadings;
 import com.bhargrah.energymart.model.ElectricityReading;
 import com.bhargrah.energymart.model.UserAccount;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class MeterReadingService {
