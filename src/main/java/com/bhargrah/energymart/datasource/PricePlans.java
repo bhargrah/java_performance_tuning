@@ -2,14 +2,13 @@ package com.bhargrah.energymart.datasource;
 
 import com.bhargrah.energymart.model.OffPeakTimeMultiplier;
 import com.bhargrah.energymart.model.PricePlan;
-import one.util.streamex.IntStreamEx;
-import org.springframework.stereotype.Component;
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import one.util.streamex.IntStreamEx;
+import org.springframework.stereotype.Component;
 
 @Component
 public class PricePlans {
