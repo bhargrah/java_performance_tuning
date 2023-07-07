@@ -12,11 +12,11 @@ import java.util.logging.Logger;
 
 public class ElectricityReadingsGenerator {
 
-    public static final Logger LOGGER = Logger.getLogger("com.timojo.energymart.util.ElectricityReadingsGenerator");
+    public static final Logger LOGGER = Logger.getLogger("com.bhargrah.energymart.util.ElectricityReadingsGenerator");
 
     public static Map<String, List<ElectricityReading>> generateMeterReadings(Accounts accounts) {
 
-        int numReadingsPerMeter = 200;
+        int numReadingsPerMeter = 20;
         Map<String, List<ElectricityReading>> meterReadings = new HashMap<>(accounts.getUserAccountsMap().size());
 
         for (UserAccount account : accounts.getUserAccountsMap().values()) {

@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 
 public class AccountGenerator {
 
-    public static final Logger LOGGER = Logger.getLogger("com.timojo.energymart.util.AccountGenerator");
+    public static final Logger LOGGER = Logger.getLogger("com.bhargrah.energymart.util.AccountGenerator");
 
     public static Map<Integer, UserAccount> generateAccounts(PricePlans pricePlans) {
 
