@@ -19,14 +19,14 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/plans")
-public class PricePlanComparatorController {
+public class PricePlanCompareController {
     private final PricePlanService pricePlanService;
     private final Accounts accounts;
     private final Timer responseTimer;
     private final Counter notFoundCounter;
 
     @Autowired
-    public PricePlanComparatorController(PricePlanService pricePlanService, Accounts accounts, MeterRegistry meterRegistry) {
+    public PricePlanCompareController(PricePlanService pricePlanService, Accounts accounts, MeterRegistry meterRegistry) {
         this.pricePlanService = pricePlanService;
         this.accounts = accounts;
         this.responseTimer = meterRegistry.timer("plans.recommend.responseTime");
