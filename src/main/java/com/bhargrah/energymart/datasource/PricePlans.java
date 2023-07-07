@@ -13,38 +13,35 @@ import org.springframework.stereotype.Component;
 @Component
 public class PricePlans {
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         PricePlans plans = new PricePlans();
         System.out.println(plans.getPricePlanList().get(0));
-
-
         System.out.println(WEEKEND_HOURS);
         System.out.println(WEEKDAY_HOURS_1_6);
         System.out.println(WEEKDAY_HOURS_19_24);
         System.out.println(WEEKDAY_HOURS_21_24);
-
-    }
+    }*/
 
 
     private List<PricePlan> pricePlanList = new ArrayList<>();
 
-    private static List<Integer> WEEKEND_HOURS = IntStream.range(120, 168).boxed().collect(Collectors.toList());
+    private static final List<Integer> WEEKEND_HOURS = IntStream.range(120, 168).boxed().collect(Collectors.toList());
 
-    private static List<Integer> WEEKDAY_HOURS_1_6 = IntStreamEx.range(1, 7)
+    private static final List<Integer> WEEKDAY_HOURS_1_6 = IntStreamEx.range(1, 7)
             .append(IntStream.range(49, 54))
             .append(IntStream.range(73, 78))
             .append(IntStream.range(97, 102))
             .append(IntStream.range(121, 126))
             .boxed().collect(Collectors.toList());
 
-    private static List<Integer> WEEKDAY_HOURS_19_24 = IntStreamEx.range(19, 25)
+    private static final List<Integer> WEEKDAY_HOURS_19_24 = IntStreamEx.range(19, 25)
             .append(IntStream.range(43, 49))
             .append(IntStream.range(67, 73))
             .append(IntStream.range(91, 97))
             .append(IntStream.range(115, 121))
             .boxed().collect(Collectors.toList());
 
-    private static List<Integer> WEEKDAY_HOURS_21_24 = IntStreamEx.range(21, 25)
+    private static final List<Integer> WEEKDAY_HOURS_21_24 = IntStreamEx.range(21, 25)
             .append(IntStream.range(45, 49))
             .append(IntStream.range(69, 73))
             .append(IntStream.range(93, 97))
@@ -65,14 +62,17 @@ public class PricePlans {
 
         // generate PricePlan for UPS_GREEN_PLAN
         List<OffPeakTimeMultiplier> upsGreenPlanMultipliers = new ArrayList<>();
+
         upsGreenPlanMultipliers.addAll(WEEKEND_HOURS
                 .stream()
                 .map(hr -> new OffPeakTimeMultiplier(hr, BigDecimal.valueOf(.85)))
                 .collect(Collectors.toList()));
+
         upsGreenPlanMultipliers.addAll(WEEKDAY_HOURS_1_6
                 .stream()
                 .map(hr -> new OffPeakTimeMultiplier(hr, BigDecimal.valueOf(.90)))
                 .collect(Collectors.toList()));
+
         upsGreenPlanMultipliers.addAll(WEEKDAY_HOURS_21_24
                 .stream()
                 .map(hr -> new OffPeakTimeMultiplier(hr, BigDecimal.valueOf(.90)))

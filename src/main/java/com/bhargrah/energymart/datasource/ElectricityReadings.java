@@ -1,9 +1,10 @@
 package com.bhargrah.energymart.datasource;
 
 import com.bhargrah.energymart.model.ElectricityReading;
-import com.bhargrah.energymart.util.ElectricityReadingsGenerator;
+import com.bhargrah.energymart.util.ElectricityReadingsGeneratorUtility;
 import java.util.*;
 import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -20,7 +21,7 @@ public class ElectricityReadings {
 
     @PostConstruct // generating dummy data for Meter Reading
     public void init() {
-        meterAssociatedReadings = ElectricityReadingsGenerator.generateMeterReadings(accounts);
+        meterAssociatedReadings = ElectricityReadingsGeneratorUtility.generateMeterReadings(accounts);
     }
 
 

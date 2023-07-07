@@ -11,7 +11,6 @@ import java.util.Optional;
 
 public class PricePlan {
     private static final ZoneId UTC_ZONE_ID = ZoneId.of("UTC");
-
     private final String energySupplier;
     private final String planName;
     private final BigDecimal unitRate; // unit price per kWh

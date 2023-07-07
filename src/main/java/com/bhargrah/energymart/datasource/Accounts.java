@@ -1,10 +1,11 @@
 package com.bhargrah.energymart.datasource;
 
 import com.bhargrah.energymart.model.UserAccount;
-import com.bhargrah.energymart.util.AccountGenerator;
+import com.bhargrah.energymart.util.AccountGeneratorUtility;
 import java.util.Map;
 import java.util.Optional;
 import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -21,7 +22,7 @@ public class Accounts {
 
     @PostConstruct // generating dummy account data
     public void init() {
-        this.userAccountsMap = AccountGenerator.generateAccounts(this.pricePlans);
+        this.userAccountsMap = AccountGeneratorUtility.generateAccounts(this.pricePlans);
     }
 
     public UserAccount getAccount(int accountId) {

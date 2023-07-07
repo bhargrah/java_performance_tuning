@@ -1,0 +1,348 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.bhargrah.energymart.datasource.ElectricityReadings",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_306686519 { 
+   	label=bhargrah
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_299813213 { 
+   	label=energymart
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   AccountGeneratorUtility2109212614[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)AccountGeneratorUtility</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ generateAccounts(pricePlans: PricePlans): Map&lt;Integer, UserAccount&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Accounts939224701[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Accounts</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   pricePlans: PricePlans [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userAccountsMap: Map&lt;Integer, UserAccount&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getAccount(accountId: int): UserAccount</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getAccountByMeterId(meterId: String): Optional&lt;UserAccount&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ init()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ElectricityReading968623631[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ElectricityReading</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   hour: Instant [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   meterId: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reading: BigDecimal [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ElectricityReadings939224701[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ElectricityReadings</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   accounts: Accounts [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   meterAssociatedReadings: Map&lt;String, List&lt;ElectricityReading&gt;&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ add(reading: ElectricityReading)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getReadingsForMeter(meterId: String): List&lt;ElectricityReading&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ init()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ElectricityReadingsGenerator2109212614[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ElectricityReadingsGenerator</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ generateMeterReadings(accounts: Accounts): Map&lt;String, List&lt;ElectricityReading&gt;&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+MeterReadingController611950124[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MeterReadingController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   accounts: Accounts [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   meterReadingService: MeterReadingService [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- isValidReading(reading: ElectricityReading): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ readReadings(accountId: Integer, limit: Integer): ResponseEntity&lt;List&lt;ElectricityReading&gt;&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ storeReading(reading: ElectricityReading): ResponseEntity</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+MeterReadingService1917793149[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MeterReadingService</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   accounts: Accounts [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   electricityReadings: ElectricityReadings [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getReadings(accountId: int): List&lt;ElectricityReading&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ storeReading(reading: ElectricityReading)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+OffPeakTimeMultiplier968623631[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)OffPeakTimeMultiplier</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   hourOfWeek: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   multiplier: BigDecimal [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PricePlan968623631[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PricePlan</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   energySupplier: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   offPeakTimeMultipliers: List&lt;OffPeakTimeMultiplier&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   planName: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   rating: Double [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   unitRate: BigDecimal [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getPrice(reading: BigDecimal, instant: Instant): BigDecimal</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getPriceMemoryLeak(reading: BigDecimal, instant: Instant): BigDecimal</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getPriceNoMemoryLeak(reading: BigDecimal, instant: Instant): BigDecimal</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PricePlanCompareController611950124[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PricePlanCompareController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   accounts: Accounts [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   notFoundCounter: Counter [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   pricePlanService: PricePlanService [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   responseTimer: Timer [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ recommendPricePlans(accountId: Integer, limit: Integer): ResponseEntity&lt;Recommendation&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PricePlanService1917793149[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PricePlanService</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   meterReadingService: MeterReadingService [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   pricePlans: PricePlans [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- calculateAverageReading(electricityReadings: List&lt;ElectricityReading&gt;): BigDecimal</TD></TR>
+<TR><TD ALIGN="LEFT" >- calculateCost(electricityReadings: List&lt;ElectricityReading&gt;, pricePlan: PricePlan): BigDecimal</TD></TR>
+<TR><TD ALIGN="LEFT" >- calculateTimeElapsed(electricityReadings: List&lt;ElectricityReading&gt;): BigDecimal</TD></TR>
+<TR><TD ALIGN="LEFT" >- calculateTotalCost(electricityReadings: List&lt;ElectricityReading&gt;, pricePlan: PricePlan): BigDecimal</TD></TR>
+<TR><TD ALIGN="LEFT" >+ get7DayCostOfElectricityForEachPricePlan(accountId: int): Map&lt;PricePlan, BigDecimal&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getConsumptionCostOfElectricityReadingsForEachPricePlan(accountId: int): Map&lt;PricePlan, BigDecimal&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PricePlans939224701[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PricePlans</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   pricePlanList: List&lt;PricePlan&gt; [0..*]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UserAccount968623631[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserAccount</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   accountStatus: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   accountType: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: Integer [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   meterId: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   planId: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userJoinDate: ZonedDateTime [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ setAccountStatus(accountStatus: String): UserAccount</TD></TR>
+<TR><TD ALIGN="LEFT" >+ setAccountType(accountType: String): UserAccount</TD></TR>
+<TR><TD ALIGN="LEFT" >+ setId(id: Integer): UserAccount</TD></TR>
+<TR><TD ALIGN="LEFT" >+ setMeterId(meterId: String): UserAccount</TD></TR>
+<TR><TD ALIGN="LEFT" >+ setPlanId(planId: String): UserAccount</TD></TR>
+<TR><TD ALIGN="LEFT" >+ setUserJoinDate(userJoinDate: ZonedDateTime): UserAccount</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+WeekHour2109212614[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)WeekHour</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ fromDateTime(dateTime: ZonedDateTime): int</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+Accounts939224701 -> AccountGeneratorUtility2109212614[label="init() -> generateAccounts()"];
+Accounts939224701 -> PricePlans939224701[label="pricePlans
+[0..1]"];
+Accounts939224701 -> UserAccount968623631[label="userAccountsMap
+[0..*]"];
+ElectricityReadings939224701 -> Accounts939224701[label="accounts
+[0..1]"];
+ElectricityReadings939224701 -> ElectricityReading968623631[label="meterAssociatedReadings
+[0..*]"];
+ElectricityReadings939224701 -> ElectricityReadingsGenerator2109212614[label="init() -> generateMeterReadings()"];
+MeterReadingController611950124 -> MeterReadingService1917793149[label="meterReadingService
+[0..1]"];
+MeterReadingService1917793149 -> ElectricityReadings939224701[label="electricityReadings
+[0..1]"];
+PricePlan968623631 -> OffPeakTimeMultiplier968623631[label="offPeakTimeMultipliers
+[0..*]"];
+PricePlanCompareController611950124 -> PricePlanService1917793149[label="pricePlanService
+[0..1]"];
+PricePlanService1917793149 -> MeterReadingService1917793149[label="meterReadingService
+[0..1]"];
+PricePlans939224701 -> PricePlan968623631[label="pricePlanList
+[0..*]"];
+    
+}
+@enduml
